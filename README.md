@@ -20,9 +20,9 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 
 ```bash
 $ git clone https://github.com/${GITHUB_USERNAME}/lab6 lab7
+$ cd lab7
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab7
-$ cd lab7
 ```
 
 ```bash
@@ -32,19 +32,27 @@ $ nano docs/doxygen.conf
 ```
 
 ```bash
-$ sed -i -E 's/\(PROJECT_NAME.*=\).*$/\1 printf/g' docs/doxygen.conf
-$ sed -i -E 's/\(EXAMPLE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
-$ sed -i -E 's/\(INCLUDE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
-$ sed -i -E 's/\(INPUT.*=\).*$/\1 README.md include/g' docs/doxygen.conf
-$ sed -i -E 's/\(USE_MDFILE_AS_MAINPAGE.*=\).*$/\1 README.md/g' docs/doxygen.conf
+$ sed -i '' 's/\(PROJECT_NAME.*=\).*$/\1 printf/g' docs/doxygen.conf
+$ sed -i '' 's/\(EXAMPLE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
+$ sed -i '' 's/\(INCLUDE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
+$ sed -i '' 's/\(INPUT *=\).*$/\1 README.md include/g' docs/doxygen.conf
+$ sed -i '' 's/\(USE_MDFILE_AS_MAINPAGE.*=\).*$/\1 README.md/g' docs/doxygen.conf
+$ sed -i '' 's/\(OUTPUT_DIRECTORY.*=\).*$/\1 docs/g' docs/doxygen.conf
+```
+
+```bash
+$ git add .
+$ git commit -m"added doxygen.conf"
+$ git push origin master
 ```
 
 ```
 $ doxygen docs/doxygen.conf
 $ ls | grep "[^docs]" | xargs rm -rf
 $ mv docs/html/* . && rm -rf docs
-$ git checkout gh-pages
-$ git commit -am"added documentation"
+$ git checkout -b gh-pages
+$ git add .
+$ git commit -m"added documentation"
 $ git push origin gh-pages
 $ git checkout master
 ```
@@ -54,12 +62,6 @@ $ mkdir artifacts && cd artifacts
 $ screencapture -T 10 screenshot.jpg
 <Command>-T
 $ open https://${GITHUB_USERNAME}.github.io/lab7
-```
-
-```bash
-$ git add .
-$ git commit -m"added doxygen.conf"
-$ git push origin master
 ```
 
 ## Links
