@@ -8,7 +8,7 @@ $ open https://www.stack.nl/~dimitri/doxygen/manual/index.html
 
 ## Tasks
 
-- [ ] 1. Создать публичный репозиторий с названием **lab7** на сервисе **GitHub**
+- [ ] 1. Создать публичный репозиторий с названием **lab07** на сервисе **GitHub**
 - [ ] 2. Выполнить инструкцию учебного материала
 - [ ] 3. Ознакомиться со ссылками учебного материала
 - [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
@@ -21,10 +21,10 @@ $ alias edit=<nano|vi|vim|subl>
 ```
 
 ```bash
-$ git clone https://github.com/${GITHUB_USERNAME}/lab6 lab7
-$ cd lab7
+$ git clone https://github.com/${GITHUB_USERNAME}/lab06 lab07
+$ cd lab07
 $ git remote remove origin
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab7
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab07
 ```
 
 ```bash
@@ -43,7 +43,7 @@ $ sed -i '' 's/\(OUTPUT_DIRECTORY.*=\).*$/\1 docs/g' docs/doxygen.conf
 ```
 
 ```bash
-$ sed -i '' 's/lab6/lab7/g' README.md
+$ sed -i '' 's/lab06/lab07/g' README.md
 ```
 
 ```bash
@@ -72,7 +72,20 @@ $ git checkout master
 $ mkdir artifacts && cd artifacts
 $ screencapture -T 10 screenshot.jpg
 <Command>-T
-$ open https://${GITHUB_USERNAME}.github.io/lab7
+$ open https://${GITHUB_USERNAME}.github.io/lab07
+```
+
+## Report
+
+```bash
+$ cd ~/workspace/labs/
+$ export LAB_NUMBER=07
+$ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
+$ mkdir reports/lab${LAB_NUMBER}
+$ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
+$ cd reports/lab${LAB_NUMBER}
+$ edit REPORT.md
+$ gistup -m"lab${LAB_NUMBER}"
 ```
 
 ## Links
