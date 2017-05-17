@@ -52,6 +52,11 @@ $ git commit -m"added doxygen.conf"
 $ git push origin master
 ```
 
+```bash
+$ travis login --auto
+$ travis enable
+```
+
 ```
 $ doxygen docs/doxygen.conf
 $ ls | grep "[^docs]" | xargs rm -rf
