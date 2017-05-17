@@ -43,7 +43,7 @@ $ sed -i '' 's/\(OUTPUT_DIRECTORY.*=\).*$/\1 docs/g' docs/doxygen.conf
 ```
 
 ```bash
-$ sed -i '' 's/lab6/lab7/' README.md
+$ sed -i '' 's/lab6/lab7/g' README.md
 ```
 
 ```bash
