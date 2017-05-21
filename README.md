@@ -34,7 +34,7 @@ $ edit docs/doxygen.conf
 ```
 
 ```bash
-$ sed -i '' 's/\(PROJECT_NAME.*=\).*$/\1 printf/g' docs/doxygen.conf
+$ sed -i '' 's/\(PROJECT_NAME.*=\).*$/\1 print/g' docs/doxygen.conf
 $ sed -i '' 's/\(EXAMPLE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
 $ sed -i '' 's/\(INCLUDE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
 $ sed -i '' 's/\(INPUT *=\).*$/\1 README.md include/g' docs/doxygen.conf
