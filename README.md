@@ -97,5 +97,5 @@ $ gistup -m"lab${LAB_NUMBER}"
 - [PostScript](https://ru.wikipedia.org/wiki/PostScript)
 
 ```
-Copyright (c) 2017 Vyacheslav Vershinin
+Copyright (c) 2017 Братья Вершинины
 ```
