@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению систем документирования исходного кода на примере **Doxygen**
 
-```bash
+```ShellSession
 $ open https://www.stack.nl/~dimitri/doxygen/manual/index.html
 ```
 
@@ -15,25 +15,25 @@ $ open https://www.stack.nl/~dimitri/doxygen/manual/index.html
 
 ## Tutorial
 
-```bash
+```ShellSession
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ alias edit=<nano|vi|vim|subl>
 ```
 
-```bash
+```ShellSession
 $ git clone https://github.com/${GITHUB_USERNAME}/lab06 lab07
 $ cd lab07
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab07
 ```
 
-```bash
+```ShellSession
 $ mkdir docs
 $ doxygen -g docs/doxygen.conf
 $ edit docs/doxygen.conf
 ```
 
-```bash
+```ShellSession
 $ sed -i '' 's/\(PROJECT_NAME.*=\).*$/\1 print/g' docs/doxygen.conf
 $ sed -i '' 's/\(EXAMPLE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
 $ sed -i '' 's/\(INCLUDE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
@@ -42,17 +42,17 @@ $ sed -i '' 's/\(USE_MDFILE_AS_MAINPAGE.*=\).*$/\1 README.md/g' docs/doxygen.con
 $ sed -i '' 's/\(OUTPUT_DIRECTORY.*=\).*$/\1 docs/g' docs/doxygen.conf
 ```
 
-```bash
+```ShellSession
 $ sed -i '' 's/lab06/lab07/g' README.md
 ```
 
-```bash
+```ShellSession
 $ git add .
 $ git commit -m"added doxygen.conf"
 $ git push origin master
 ```
 
-```bash
+```ShellSession
 $ travis login --auto
 $ travis enable
 ```
@@ -68,7 +68,7 @@ $ git push origin gh-pages
 $ git checkout master
 ```
 
-```bash
+```ShellSession
 $ mkdir artifacts && cd artifacts
 $ screencapture -T 10 screenshot.jpg
 <Command>-T
@@ -77,7 +77,7 @@ $ open https://${GITHUB_USERNAME}.github.io/lab07
 
 ## Report
 
-```bash
+```ShellSession
 $ cd ~/workspace/labs/
 $ export LAB_NUMBER=07
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
