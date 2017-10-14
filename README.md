@@ -75,9 +75,13 @@ $ git checkout master
 
 ```ShellSession
 $ mkdir artifacts && cd artifacts
-$ screencapture -T 10 screenshot.jpg
+$ screencapture -T 10 screenshot.jpg # или png
 <Command>-T
-$ open https://${GITHUB_USERNAME}.github.io/lab07
+$ open https://${GITHUB_USERNAME}.github.io/lab07/print_8hpp_source.html
+$ gdrive upload screenshot.jpg # или png
+$ SCREENSHOT_ID=`gdrive list | grep screenshot | awk '{ print $1; }'`
+$ gdrive share ${SCREENSHOT_ID} --role reader --type user --email rusdevops@gmail.com
+$ echo https://drive.google.com/open?id=${SCREENSHOT_ID}
 ```
 
 ## Report
