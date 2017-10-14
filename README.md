@@ -30,7 +30,7 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab07
 ```ShellSession
 $ mkdir docs
 $ doxygen -g docs/doxygen.conf
-$ edit docs/doxygen.conf
+$ cat docs/doxygen.conf
 ```
 
 ```ShellSession
@@ -44,6 +44,11 @@ $ sed -i '' 's/\(OUTPUT_DIRECTORY.*=\).*$/\1 docs/g' docs/doxygen.conf
 
 ```ShellSession
 $ sed -i '' 's/lab06/lab07/g' README.md
+```
+
+```ShellSession
+# документируем функции print 
+$ edit include/print.hpp
 ```
 
 ```ShellSession
