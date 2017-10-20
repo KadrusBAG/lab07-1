@@ -18,6 +18,7 @@ $ open https://www.stack.nl/~dimitri/doxygen/manual/index.html
 ```ShellSession
 $ export GITHUB_USERNAME=<имя_пользователя>
 $ alias edit=<nano|vi|vim|subl>
+$ alias gsed=sed # for *-nix system
 ```
 
 ```ShellSession
@@ -34,16 +35,16 @@ $ cat docs/doxygen.conf
 ```
 
 ```ShellSession
-$ sed -i '' 's/\(PROJECT_NAME.*=\).*$/\1 print/g' docs/doxygen.conf
-$ sed -i '' 's/\(EXAMPLE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
-$ sed -i '' 's/\(INCLUDE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
-$ sed -i '' 's/\(INPUT *=\).*$/\1 README.md include/g' docs/doxygen.conf
-$ sed -i '' 's/\(USE_MDFILE_AS_MAINPAGE.*=\).*$/\1 README.md/g' docs/doxygen.conf
-$ sed -i '' 's/\(OUTPUT_DIRECTORY.*=\).*$/\1 docs/g' docs/doxygen.conf
+$ gsed -i 's/\(PROJECT_NAME.*=\).*$/\1 print/g' docs/doxygen.conf
+$ gsed -i 's/\(EXAMPLE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
+$ gsed -i 's/\(INCLUDE_PATH.*=\).*$/\1 examples/g' docs/doxygen.conf
+$ gsed -i 's/\(INPUT *=\).*$/\1 README.md include/g' docs/doxygen.conf
+$ gsed -i 's/\(USE_MDFILE_AS_MAINPAGE.*=\).*$/\1 README.md/g' docs/doxygen.conf
+$ gsed -i 's/\(OUTPUT_DIRECTORY.*=\).*$/\1 docs/g' docs/doxygen.conf
 ```
 
 ```ShellSession
-$ sed -i '' 's/lab06/lab07/g' README.md
+$ gsed -i 's/lab06/lab07/g' README.md
 ```
 
 ```ShellSession
