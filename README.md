@@ -22,8 +22,26 @@ $ alias gsed=sed # for *-nix system
 ```
 
 ```ShellSession
-$ git clone https://github.com/${GITHUB_USERNAME}/lab06 lab07
-$ cd lab07
+$ cd ${GITHUB_USERNAME}/workspace
+$ pushd .
+$ source scripts/activate
+```
+
+```ShellSession
+$ wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz
+$ tar -C . -xzf go1.9.2.linux-amd64.tar.gz
+$ rm -rf go1.9.2.linux-amd64.tar.gz
+$ echo "export GOROOT=`pwd`/go" >> scripts/activate
+$ echo "export GOPATH=`pwd`/go_modules" >> scripts/activate
+$ echo "export PATH=\${PATH}:\${GOROOT}/bin" >> scripts/activate
+$ echo "export PATH=\${PATH}:\${GOPATH}/bin" >> scripts/activate
+$ source scripts/activate
+$ go get github.com/prasmussen/gdrive
+```
+
+```ShellSession
+$ git clone https://github.com/${GITHUB_USERNAME}/lab06 projects/lab07
+$ cd projects/lab07
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab07
 ```
@@ -31,7 +49,7 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab07
 ```ShellSession
 $ mkdir docs
 $ doxygen -g docs/doxygen.conf
-$ cat docs/doxygen.conf
+$ cat docs/doxygen.conf | less
 ```
 
 ```ShellSession
@@ -77,10 +95,10 @@ $ git checkout master
 
 ```ShellSession
 $ mkdir artifacts && cd artifacts
-$ screencapture -T 10 screenshot.jpg # или png
-<Command>-T
-$ open https://${GITHUB_USERNAME}.github.io/lab07/print_8hpp.html
-$ gdrive upload screenshot.jpg # или png
+$ sleep 20s && gnome-screenshot --file artifacts/screenshot.png
+# for macOS: $ screencapture -T 20 artifacts/screenshot.png
+# open https://${GITHUB_USERNAME}.github.io/lab07/print_8hpp.html
+$ gdrive upload screenshot.png
 $ SCREENSHOT_ID=`gdrive list | grep screenshot | awk '{ print $1; }'`
 $ gdrive share ${SCREENSHOT_ID} --role reader --type user --email rusdevops@gmail.com
 $ echo https://drive.google.com/open?id=${SCREENSHOT_ID}
@@ -89,7 +107,7 @@ $ echo https://drive.google.com/open?id=${SCREENSHOT_ID}
 ## Report
 
 ```ShellSession
-$ cd ~/workspace/labs/
+$ popd
 $ export LAB_NUMBER=07
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
 $ mkdir reports/lab${LAB_NUMBER}
