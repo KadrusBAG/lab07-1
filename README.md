@@ -17,6 +17,7 @@ $ open https://www.stack.nl/~dimitri/doxygen/manual/index.html
 
 ```ShellSession
 $ export GITHUB_USERNAME=<имя_пользователя>
+$ export TEACHER_EMAIL=<rusdevops@gmail.com|justcppdev@gmail.com>
 $ alias edit=<nano|vi|vim|subl>
 $ alias gsed=sed # for *-nix system
 ```
@@ -100,7 +101,7 @@ $ sleep 20s && gnome-screenshot --file artifacts/screenshot.png
 # open https://${GITHUB_USERNAME}.github.io/lab07/print_8hpp.html
 $ gdrive upload screenshot.png
 $ SCREENSHOT_ID=`gdrive list | grep screenshot | awk '{ print $1; }'`
-$ gdrive share ${SCREENSHOT_ID} --role reader --type user --email <rusdevops@gmail.com|justcppdev@gmail.com>
+$ gdrive share ${SCREENSHOT_ID} --role reader --type user --email ${TEACHER_EMAIL}
 $ echo https://drive.google.com/open?id=${SCREENSHOT_ID}
 ```
 
